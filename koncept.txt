@@ -1,0 +1,67 @@
+NET 6.0
+Docker - postgreSQL(Dapper ORM)
+
+
+Mapa parkingu
+Możliwość zakupienia biletu na okr. miejscu np Miejsce 4A
+Sprawdzanie możliwości zaparkowania: 
+                Motocykl - 1 miejsce 
+                Auto - 2 miejsca
+                Autobus - 6 miejsc 
+
++-----------------------------+
+|xxxx|xxxx|    |    |    |    |
+| A1 | A2 | A3 | A4 | A5 | A6 |
+|xxxx|xxxx|    |    |    |    |
++-----------------------------+
+|    |    |    |    |    |    |
+| B1 | B2 | B3 | B4 | B5 | B6 |
+|    |    |    |    |    |    |
++-----------------------------+
+|    |    |    |    |    |    |
+| C1 | C2 | C3 | C4 | C5 | C6 |
+|    |    |    |    |    |    |
++-----------------------------+
+|    |    |    |    |    |    |
+| D1 | D2 | D3 | D4 | D5 | D6 |
+|    |    |    |    |    |    |
++-----------------------------+
+|    |    |    |    |    |    |
+| E1 | E2 | E3 | E4 | E5 | E6 |
+|    |    |    |    |    |    |
++-----------------------------+
+
+Autobus może zaparkować jedynie horyzontalnie: np A1,A2,A3,A4,A5,A6
+System płatności od miejsca
+DB zachowuje rekordy aut zaparkowanych (numery rejestracyjne (obecnie i w przeszłości)), a następnie historie płatności
+Funkcja sprawdzania możliwości parkowania dla (tylko auta i autobusu, ponieważ motocykl zajmuje tylko 1 miejsce)
+Nakaz parkowania na określonym miejscu po wjeździe(przy wjeździe druk biletu z określonym miejscem po wybraniu rodzaju pojazdu)
+Przed wjazdem oznaczenia przy danym rodzaju pojazdu informujące o możliwości wjazdu
+Struktura tabel
+
+Pojazdy
++---------------------------+
+| nr_rej PK| rodzaj_pojazdu | 
+
+
+Miejsce
+
++----------------------+
+| miejsce PK| is_taken | 
+
+
+Parkowanie
+
++-------------------------------------------------------+
+| nr_rej PK,FK| miejsce PK,FK| data_wjazd | data_wyjazd |
++-------------------------------------------------------+
+| R7 ESSA     | A1           | 
+| R7 ESSA     | A2
+
+
+Klasy
+
+Pojazd - Autobus, Auto, Motocykl
+Parking - 
+Miejsce
+Parkowanie

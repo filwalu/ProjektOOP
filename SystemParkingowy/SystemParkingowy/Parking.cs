@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Vehicle
 {
-    internal class Parking
+    public class Parking
     {
-        Dictionary<string, string> parkingSpots = new Dictionary<string, string>();
+        public Dictionary<string, string> parkingSpots = new Dictionary<string, string>();
         public Parking(Dictionary<string, string> parkingSpots)
         {
             this.parkingSpots = parkingSpots;

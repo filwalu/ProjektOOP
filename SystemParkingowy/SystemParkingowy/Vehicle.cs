@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace SystemParkingowy
 {
-    internal class Vehicle
+
+
+    public abstract class Vehicle
     {
+        public string RegistrationNumber { get; }
+
+        protected Vehicle(string registrationNumber)
+        {
+            RegistrationNumber = registrationNumber;
+        }
     }
 }

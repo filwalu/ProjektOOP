@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace SystemParkingowy
 {
-    internal class Motorcycle
+    public class Motorcycle : Vehicle
     {
+        public Motorcycle(string registrationNumber) : base(registrationNumber)
+        {
+            RequiredParkingSpaces = 1;
+        }
+
+        public int RequiredParkingSpaces { get; }
     }
 }

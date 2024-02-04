@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace SystemParkingowy
 {
-    internal class Car
+    public class Car : Vehicle
     {
+        public Car(string registrationNumber) : base(registrationNumber)
+        {
+            RequiredParkingSpaces = 2;
+        }
+
+        public int RequiredParkingSpaces { get; }
     }
 }

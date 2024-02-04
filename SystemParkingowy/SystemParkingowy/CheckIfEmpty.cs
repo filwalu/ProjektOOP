@@ -5,33 +5,36 @@ using System.Text;
 using System.Threading.Tasks;
 using Vehicle;
 
-namespace SystemParkingowy;
-internal class CheckIfEmpty : Parking
+namespace SystemParkingowy
 {
-    public CheckIfEmpty(Dictionary<string, string> parkingSpots) : base(parkingSpots)
-    {
-    }
 
-    public void DisplayParkingStatus()
+    internal class CheckIfEmpty : Parking
     {
-        // Tworzenie układu miejsc parkingowych
-        for (int row = 1; row <= 4; row++)
+        public CheckIfEmpty(Dictionary<string, string> parkingSpots) : base(parkingSpots)
         {
-            for (char col = 'A'; col <= 'D'; col++)
-            {
-                string spot = $"{row}{col}";
+        }
 
-                // Sprawdź, czy miejsce jest zajęte
-                if (parkingSpots.ContainsKey(spot))
+        public void DisplayParkingStatus()
+        {
+            // Tworzenie układu miejsc parkingowych
+            for (int row = 1; row <= 4; row++)
+            {
+                for (char col = 'A'; col <= 'D'; col++)
                 {
-                    Console.Write("## ");
+                    string spot = $"{row}{col}";
+
+                    // Sprawdź, czy miejsce jest zajęte
+                    if (parkingSpots.ContainsKey(spot))
+                    {
+                        Console.Write("## ");
+                    }
+                    else
+                    {
+                        Console.Write($"{spot} ");
+                    }
                 }
-                else
-                {
-                    Console.Write($"{spot} ");
-                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
         }
     }
 }

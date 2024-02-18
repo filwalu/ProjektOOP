@@ -8,13 +8,14 @@ namespace SystemParkingowy
 {
 
 
-    public abstract class Vehicle
-    {
-        public string RegistrationNumber { get; }
+   public abstract class Vehicle {
+    public string RegistrationNumber { get; }
+    public string Color { get; }
+    public abstract int RequiredParkingSpaces { get; }
 
-        protected Vehicle(string registrationNumber)
-        {
-            RegistrationNumber = registrationNumber;
-        }
+    protected Vehicle(string registrationNumber, string color) {
+        RegistrationNumber = registrationNumber;
+        Color = color;
     }
+}
 }

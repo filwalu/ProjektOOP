@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\filip\\source\\repos\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj",
+      "projectUniqueName": "C:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj",
       "projectName": "SystemParkingowy",
-      "projectPath": "C:\\Users\\filip\\source\\repos\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj",
+      "projectPath": "C:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj",
       "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\filip\\source\\repos\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\obj\\",
+      "outputPath": "C:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace SystemParkingowy
 {
-    public class Motorcycle : Vehicle
-    {
-        public Motorcycle(string registrationNumber) : base(registrationNumber)
-        {
-            RequiredParkingSpaces = 1;
-        }
-
-        public int RequiredParkingSpaces { get; }
-    }
+  public class Motorcycle : Vehicle {
+    public override int RequiredParkingSpaces => 1;
+    public Motorcycle(string registrationNumber, string color) : base(registrationNumber, color) { }
+}
 }

@@ -2,3 +2,7 @@ C:\Users\filip\source\repos\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Deb
 C:\Users\filip\source\repos\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.AssemblyInfoInputs.cache
 C:\Users\filip\source\repos\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.AssemblyInfo.cs
 C:\Users\filip\source\repos\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.csproj.CoreCompileInputs.cache
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.AssemblyInfoInputs.cache
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.AssemblyInfo.cs
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.csproj.CoreCompileInputs.cache

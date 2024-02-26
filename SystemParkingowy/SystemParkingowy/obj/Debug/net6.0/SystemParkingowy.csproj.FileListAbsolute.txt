@@ -6,3 +6,13 @@ c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\Sys
 c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.AssemblyInfoInputs.cache
 c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.AssemblyInfo.cs
 c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.csproj.CoreCompileInputs.cache
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\bin\Debug\net6.0\SystemParkingowy.exe
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\bin\Debug\net6.0\SystemParkingowy.deps.json
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\bin\Debug\net6.0\SystemParkingowy.runtimeconfig.json
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\bin\Debug\net6.0\SystemParkingowy.dll
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\bin\Debug\net6.0\SystemParkingowy.pdb
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.dll
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\refint\SystemParkingowy.dll
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.pdb
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\SystemParkingowy.genruntimeconfig.cache
+c:\Users\filip\ProjektOOP\SystemParkingowy\SystemParkingowy\obj\Debug\net6.0\ref\SystemParkingowy.dll

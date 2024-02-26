@@ -5,11 +5,12 @@ using System.Linq;
 
 namespace SystemParkingowy {
     public class Parking {
+        public const string ParkingStateFile = "C:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\parking_state.txt";
         protected Dictionary<string, Vehicle> spots = new Dictionary<string, Vehicle>();
-         public Parking(Dictionary<string, Vehicle> initialSpots) {
+        public Parking(Dictionary<string, Vehicle> initialSpots) {
         spots = initialSpots;
          }
-        public const string ParkingStateFile = @"\SystemParkingowy\SystemParkingowy\parking_state.txt"; 
+         
 
         public Parking() {
             InitializeParkingSpots();
@@ -21,21 +22,64 @@ namespace SystemParkingowy {
             return spots.Count(s => s.Value == null) >= requiredSpaces;
         }
 
-        public void EnterParking(string spotId, Vehicle vehicle) {
-            // Assign the vehicle to a specific spot
-            if (spots.ContainsKey(spotId) && spots[spotId] == null) {
-                spots[spotId] = vehicle;
-                SaveParkingState();
-            }
-        }
+    public void EnterParking(Vehicle vehicle) {
+    int requiredSpaces = vehicle.RequiredParkingSpaces;
+    List<string> assignedSpots = new List<string>();
 
-        public void ExitParking(string spotId) {
-            // Find the vehicle by spotId and free the spot
-            if (spots.ContainsKey(spotId) && spots[spotId] != null) {
-                spots[spotId] = null;
-                SaveParkingState();
+    // Find and assign the required number of spots
+    for (int i = 0; i < requiredSpaces; i++) {
+        var freeSpot = spots.FirstOrDefault(s => s.Value == null).Key;
+        if (!string.IsNullOrEmpty(freeSpot)) {
+            spots[freeSpot] = vehicle;
+            assignedSpots.Add(freeSpot);
+
+            // Move to the next available spot for multi-spot vehicles
+            spots.Remove(freeSpot);
+        }
+    }
+
+    // Log each assigned spot to parking_state.txt
+    foreach (var spot in assignedSpots) {
+        File.AppendAllText(ParkingStateFile, $"{vehicle.GetType().Name} {vehicle.RegistrationNumber} {spot}\n");
+    }
+
+    if (assignedSpots.Any()) {
+        Console.WriteLine($"{vehicle.GetType().Name} {vehicle.RegistrationNumber} parked at spots: {string.Join(", ", assignedSpots)}.");
+    } else {
+        Console.WriteLine("No available spots.");
+    }
+}
+
+
+    private string FindFreeSpot(int requiredSpaces) {
+        // Here you would implement the logic to find the appropriate number of free contiguous spots
+        // For simplicity, let's assume each vehicle only requires one spot
+        foreach (var spot in spots) {
+            if (spot.Value == null) {
+                return spot.Key; // Return the first free spot
             }
         }
+        return null; // If no spots are available, return null
+    }
+    public void ExitParking(string registrationNumber) {
+    // Load the current parking state from the file
+    var allEntries = File.ReadAllLines(ParkingStateFile).ToList();
+    var vehicleEntries = allEntries.Where(line => line.Contains(registrationNumber)).ToList();
+
+    if (vehicleEntries.Any()) {
+        // Remove the vehicle's entries from the list
+        allEntries = allEntries.Except(vehicleEntries).ToList();
+
+        // Update the file with the new state
+        File.WriteAllLines(ParkingStateFile, allEntries);
+
+        Console.WriteLine($"Vehicle {registrationNumber} has exited.");
+    } else {
+        Console.WriteLine($"Vehicle {registrationNumber} not found.");
+    }
+}
+
+
 
         private void InitializeParkingSpots() {
             for (int row = 1; row <= 10; row++) {
@@ -45,28 +89,39 @@ namespace SystemParkingowy {
             }
         }
 
-        private void LoadParkingState() {
-    // Clear the current state before loading
-    InitializeParkingSpots(); 
+    private void LoadParkingState() {
+    InitializeParkingSpots(); // Reset spots before loading the state
 
-    // Check if the file exists before trying to read
     if (File.Exists(ParkingStateFile)) {
         var lines = File.ReadAllLines(ParkingStateFile);
         foreach (var line in lines) {
-            var parts = line.Split(',');
-            if (parts.Length == 3) { // Assuming line format is "spotId,registrationNumber,color"
-                string spotId = parts[0];
+            var parts = line.Split(' ');
+            if (parts.Length == 3) {
+                string vehicleType = parts[0];
                 string registrationNumber = parts[1];
-                string color = parts[2];
+                string spotId = parts[2];
 
-                // Based on registration number and color, create the appropriate vehicle object
-                // This assumes a simple system where all vehicles are considered 'Car'
-                // You might need a more complex logic if there are different types of vehicles
-                spots[spotId] = new Car(registrationNumber, color);
+                Vehicle vehicle = null;
+                switch (vehicleType) {
+                    case "Car":
+                        vehicle = new Car(registrationNumber, ""); // Assuming color is not used here
+                        break;
+                    case "Motorcycle":
+                        vehicle = new Motorcycle(registrationNumber, "");
+                        break;
+                    case "Bus":
+                        vehicle = new Bus(registrationNumber, "");
+                        break;
+                }
+
+                if (vehicle != null && !spots.ContainsKey(spotId)) {
+                    spots.Add(spotId, vehicle); // Ensure spots are uniquely assigned
+                }
             }
         }
     }
 }
+
 
 private void SaveParkingState() {
     var lines = new List<string>();

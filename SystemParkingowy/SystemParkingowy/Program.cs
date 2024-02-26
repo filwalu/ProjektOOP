@@ -11,6 +11,13 @@ namespace SystemParkingowy
         
         Parking parking = new Parking();
         
+        string asciiArtPath = "C:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\ascii.txt";
+        
+        if (File.Exists(asciiArtPath)) {
+        string asciiArt = File.ReadAllText(asciiArtPath);
+        Console.WriteLine(asciiArt);
+        }
+        
         bool exit = false;
         while (!exit) {
             Console.WriteLine("1. Check Availability");
@@ -20,33 +27,69 @@ namespace SystemParkingowy
             Console.WriteLine("5. Exit");
 
             string option = Console.ReadLine();
+            
+            //string regNumber = Console.ReadLine();
             switch (option) {
                 case "1":
                     // Check availability for cars
                     Console.WriteLine($"Available spots: {parking.CheckAvailability(1)}");
+                    Thread.Sleep(1000); // Wait for 1000 ms
+                    Console.Clear(); // Clear the console screen
                     break;
                 case "2":
-                    
-                    // Process vehicle entry (simplified for cars)
-                    Console.WriteLine("Enter spot ID (e.g., '1A'):");
-                    string spotId = Console.ReadLine(); // Get the spot ID from the user
                     Console.WriteLine("Enter registration number:");
                     string regNumber = Console.ReadLine();
+                    
                     Console.WriteLine("Enter color:");
                     string color = Console.ReadLine();
-                    parking.EnterParking(spotId, new Car(regNumber, color)); // Pass in both spot ID and the new car
-                    Console.WriteLine("Vehicle entered.");
-                    break;
-                   case "3":
-                    // Process vehicle exit
-                    Console.WriteLine("Enter registration number for exiting vehicle:");
-                    regNumber = Console.ReadLine();
-                    parking.ExitParking(regNumber);
-                    Console.WriteLine("Vehicle exited.");
-                    break;
+                    Console.WriteLine("Choose vehicle type [1] Car [2] Motorcycle [3] Bus:");
+                    string typeChoice = Console.ReadLine();
+
+
+                    Vehicle vehicle = null;
+                    switch (typeChoice) {
+                        case "1":
+                            vehicle = new Car(regNumber, color);
+                            break;
+                        case "2":
+                            vehicle = new Motorcycle(regNumber, color);
+                            break;
+                        case "3":
+                            vehicle = new Bus(regNumber, color);
+                            break;
+                        default:
+                            Console.WriteLine("Invalid vehicle type selected.");
+                            break;
+                        }
+
+                        if (vehicle != null) {
+                            parking.EnterParking(vehicle);
+                        }
+                        
+                        
+                        Thread.Sleep(1000); // Wait for 1000 ms
+                        Console.Clear(); // Clear the console screen
+                        break;
+
+                            
+
+                case "3":
+                Console.WriteLine("Enter registration number for exiting vehicle:");
+                string exitRegNumber = Console.ReadLine();
+                
+                
+
+                // Call ExitParking method with the provided registration number
+                parking.ExitParking(exitRegNumber);
+               
+                
+                Console.WriteLine($"Vehicle with registration number {exitRegNumber} has exited.");
+                Thread.Sleep(1000); // Wait for 1000 ms
+                Console.Clear(); // Clear the console screen
+                break;
                 case "4":
                     // Show general information
-                    Console.WriteLine("General Parking Information...");
+                    Console.WriteLine("Filip Walat 67204 Projekt programowanie obiektowe");
                     break;
                 case "5":
                     exit = true;

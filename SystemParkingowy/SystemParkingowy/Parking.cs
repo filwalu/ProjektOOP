@@ -26,14 +26,14 @@ namespace SystemParkingowy {
     int requiredSpaces = vehicle.RequiredParkingSpaces;
     List<string> assignedSpots = new List<string>();
 
-    // Find and assign the required number of spots
+    
     for (int i = 0; i < requiredSpaces; i++) {
         var freeSpot = spots.FirstOrDefault(s => s.Value == null).Key;
         if (!string.IsNullOrEmpty(freeSpot)) {
             spots[freeSpot] = vehicle;
             assignedSpots.Add(freeSpot);
 
-            // Move to the next available spot for multi-spot vehicles
+            
             spots.Remove(freeSpot);
         }
     }
@@ -52,8 +52,7 @@ namespace SystemParkingowy {
 
 
     private string FindFreeSpot(int requiredSpaces) {
-        // Here you would implement the logic to find the appropriate number of free contiguous spots
-        // For simplicity, let's assume each vehicle only requires one spot
+        
         foreach (var spot in spots) {
             if (spot.Value == null) {
                 return spot.Key; // Return the first free spot
@@ -67,7 +66,7 @@ namespace SystemParkingowy {
     var vehicleEntries = allEntries.Where(line => line.Contains(registrationNumber)).ToList();
 
     if (vehicleEntries.Any()) {
-        // Remove the vehicle's entries from the list
+        // Remove the vehicle entries from the list
         allEntries = allEntries.Except(vehicleEntries).ToList();
 
         // Update the file with the new state

@@ -28,13 +28,13 @@ namespace SystemParkingowy
 
             string option = Console.ReadLine();
             
-            //string regNumber = Console.ReadLine();
+            
             switch (option) {
                 case "1":
-                    // Check availability for cars
+                    
                     Console.WriteLine($"Available spots: {parking.CheckAvailability(1)}");
-                    Thread.Sleep(1000); // Wait for 1000 ms
-                    Console.Clear(); // Clear the console screen
+                    Thread.Sleep(1000); 
+                    Console.Clear(); 
                     break;
                 case "2":
                     Console.WriteLine("Enter registration number:");
@@ -67,8 +67,8 @@ namespace SystemParkingowy
                         }
                         
                         
-                        Thread.Sleep(1000); // Wait for 1000 ms
-                        Console.Clear(); // Clear the console screen
+                        Thread.Sleep(1000); 
+                        Console.Clear(); 
                         break;
 
                             
@@ -79,18 +79,20 @@ namespace SystemParkingowy
                 
                 
 
-                // Call ExitParking method with the provided registration number
+                
                 parking.ExitParking(exitRegNumber);
                
                 
                 Console.WriteLine($"Vehicle with registration number {exitRegNumber} has exited.");
-                Thread.Sleep(1000); // Wait for 1000 ms
-                Console.Clear(); // Clear the console screen
+                Thread.Sleep(1000); 
+                Console.Clear(); 
                 break;
                 case "4":
-                    // Show general information
-                    Console.WriteLine("Filip Walat 67204 Projekt programowanie obiektowe");
-                    break;
+                        // Show general information
+                        Console.WriteLine("Filip Walat 67204 Projekt programowanie obiektowe");
+                        Thread.Sleep(1000); 
+                        Console.Clear();
+                        break;
                 case "5":
                     exit = true;
                     break;

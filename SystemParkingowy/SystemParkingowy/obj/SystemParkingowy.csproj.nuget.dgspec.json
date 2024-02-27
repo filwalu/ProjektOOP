@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj": {}
+    "C:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj": {}
   },
   "projects": {
-    "c:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj": {
+    "C:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj",
+        "projectUniqueName": "C:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj",
         "projectName": "SystemParkingowy",
-        "projectPath": "c:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj",
+        "projectPath": "C:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\SystemParkingowy.csproj",
         "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\obj\\",
+        "outputPath": "C:\\Users\\filip\\ProjektOOP\\SystemParkingowy\\SystemParkingowy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,0 +1,60 @@
+\chapter{Opis założeń projektu}
+\section{Cele projetu}
+
+Celem naszego projektu jest stworzenie zaawansowanego systemu obsługi parkingu wykorzystującego platformę C\#. Dążymy do zaprojektowania i implementacji systemu, który nie tylko efektywnie zarządza ruchem pojazdów na parkingu, ale również zapewnia wygodę użytkownikom. Projekt ten ma kluczowe znaczenie dla naszych studiów informatycznych, koncentrując się na wykorzystaniu praktycznych umiejętności programistycznych w środowisku C\# do rozwiązania realnych problemów.
+`'
+\begin{itemize}
+    \item \textbf{Jaki jest cel projektu?} Stworzenie systemu zarządzania parkingiem, który usprawnia parkowanie i zarządzanie przestrzenią parkingową.
+    \item \textbf{Jaki jest problem, który będzie rozwiązywany oraz proszę wskazać podstawowe źródło problemu?} Problemem jest niewystarczająca automatyzacja zarządzania parkingami, co prowadzi do trudności z lokalizacją wolnych miejsc oraz zarządzaniem ruchem pojazdów.
+    \item \textbf{Dlaczego ten problem jest ważny oraz jakie są dowody potwierdzające jego istnienie?} Zwiększająca się liczba pojazdów w miastach wymaga bardziej efektywnych rozwiązań parkingowych, aby zmniejszyć zatory i poprawić doświadczenia użytkowników.
+    \item \textbf{Co jest niezbędne, aby problem został rozwiązany przez Zespół i dlaczego?} Niezbędne jest zastosowanie nowoczesnych technologii i metod programowania, aby stworzyć elastyczny i skalowalny system.
+    \item \textbf{W jaki sposób problem zostanie rozwiązany?} Poprzez zaprojektowanie i implementację systemu na platformie C\#, wykorzystującego zasady programowania obiektowego do zarządzania danymi i procesami parkingowymi.
+\end{itemize}
+
+\section{Wymagania funkcjonale i niefunkcjonalne}
+
+\noindent \textbf{Definicja:}
+
+Wymagania funkcjonalne określają konkretną funkcjonalność lub zachowanie systemu, które musi zostać zaimplementowane. Obejmują one specyficzne zadania lub funkcje, które system powinien być w stanie wykonać, takie jak przetwarzanie danych, wykonanie obliczeń, reakcja na określone wejścia użytkownika, i inne wymagane operacje.
+
+Wymagania niefunkcjonalne dotyczą ogólnych jakości systemu, takich jak wydajność, bezpieczeństwo, skalowalność, niezawodność, łatwość użytkowania, i zgodność ze standardami. Te wymagania nie opisują bezpośrednio działań systemu, ale określają atrybuty, które muszą być spełnione, aby system był użyteczny i efektywny w swoim środowisku pracy.
+
+\section{Wymagania Funkcjonalne}
+
+Wymagania funkcjonalne naszego systemu obejmują:
+
+\begin{itemize}
+    \item Sprawdzanie dostępności miejsc parkingowych: Użytkownik za pomocą prostego interfejsu może szybko zweryfikować, czy na parkingu znajduje się wolne miejsce.
+    \item Rejestracja pojazdu na parkingu: Użytkownik podając dane pojazdu (numer rejestracyjny, kolor, typ), inicjuje proces rejestracji wjazdu. 
+    \item Rejestracja wyjazdu pojazdu: Przy wyjeździe z parkingu użytkownik informuje system o zwolnieniu miejsca. Dzięki temu procesowi, system na bieżąco aktualizuje dostępne miejsca parkingowe, co pozwala na optymalizację zarządzania parkingiem.
+    \item Dostęp do ogólnych informacji o projekcie: System oferuje użytkownikom interfejs do przeglądania informacji o projekcie, w tym celach, funkcjonalnościach oraz sposobie korzystania z systemu.
+    \item Bezpieczne zakończenie pracy z aplikacją przez użytkownika.
+\end{itemize}
+
+Metody takie jak \texttt{CheckAvailability}, \texttt{EnterParking}, i \texttt{ExitParking} są kluczowe dla funkcjonowania systemu, co zapewnia sprawne zarządzanie parkingiem i dostępnością miejsc.
+
+\section{Wymagania Niefunkcjonalne}
+
+Wymagania niefunkcjonalne projektu są równie istotne, zapewniając:
+
+\begin{itemize}
+    \item Skalowalność i wydajność: System został zaprojektowany z myślą o obsłudze dużej liczby pojazdów i użytkowników, zapewniając płynną pracę nawet przy wysokim obciążeniu, co jest kluczowe dla zapewnienia ciągłości działania w obszarach miejskich o dużej intensywności ruchu.
+    \item Szybki czas odpowiedzi i efektywność działania aplikacji.
+    Utrzymywalność i łatwość modyfikacji: Kod źródłowy systemu jest zgodny z najlepszymi praktykami programistycznymi, co ułatwia wprowadzanie zmian, aktualizacji oraz szybką diagnozę i naprawę ewentualnych błędów.
+    \item Możliwość przeprowadzania testów jednostkowych i integracyjnych.
+\end{itemize}
+
+Zastosowanie zorientowanej obiektowo hierarchii klas oraz wykorzystanie zaawansowanych struktur danych pozwala na skuteczne zarządzanie stanem parkingowym i obsługę różnych typów pojazdów.
+\clearpage
+\section{Oczekiwania jakościowe aplikacji dedykowanej}
+
+Teraz nadchodzi część, w której definiujemy oczekiwania jakościowe aplikacji dedykowanej zarządzania parkingiem. Te atrybuty opisują sposoby, w jakie oczekujemy, że aplikacja będzie się zachowywała:
+
+\begin{itemize}
+    \item \textbf{Użyteczność produktu:} Aplikacja powinna charakteryzować się intuicyjnym i łatwym w użyciu interfejsem, minimalizującym potrzebę szkoleń i umożliwiającym szybki dostęp do wszystkich kluczowych funkcji.
+    \item \textbf{Prawa i regulacje:} Aplikacja musi być zgodna z ogólnym rozporządzeniem o ochronie danych (RODO) oraz lokalnymi przepisami dotyczącymi parkowania i płatności elektronicznych.
+    \item \textbf{Dostępność aplikacji:} System powinien być dostępny 24/7/365, z zapewnieniem ciągłości działania nawet w przypadku awarii czy nieprzewidzianych sytuacji.
+    \item \textbf{Wydajność systemu IT:} Oczekuje się, że czas odpowiedzi systemu na kluczowe operacje (np. ładowanie listy dostępnych miejsc) nie będzie przekraczał 3 sekund, a funkcje offline będą dostępne przez co najmniej 24h.
+\end{itemize}
+
+

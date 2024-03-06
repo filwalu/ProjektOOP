@@ -1,0 +1,58 @@
+% **** Szablon pracy magisterskiej, licencjackiej lub inżynierskiej ****
+
+\documentclass[polish,12pt,twoside,a4paper]{report}
+
+\input{style.tex}
+
+%definicja przydatnych poleceń
+\newcommand{\wydzial}{KOLEGIUM INFORMATYKI STOSOWANEJ}
+\newcommand{\kierunek}{Kierunek: INFORMATYKA}
+\newcommand{\autor}{Filip Walat}
+\newcommand{\album}{Nr albumu studenta w67204}
+\newcommand{\temat}{System do zarządzania parkingiem}
+\newcommand{\promotor}{mgr inż. Ewa Żesławska}
+\newcommand{\typpracy}{Praca projektowa programowanie obiekotwe C\#}
+\newcommand{\miasto}{Rzeszów}
+\newcommand{\rok}{2023}
+
+\begin{document}
+
+% *************** Włączenie definicji pierwszych stron ***************
+\input{front.tex}
+
+
+% *************** Część główna pracy ***************
+\input{wstep.tex}
+\addcontentsline{toc}{chapter}{Wstęp}
+\newpage
+\input{R1.tex}
+\newpage
+\input{R2.tex}
+\newpage
+\input{R3.tex}
+\newpage
+\input{R4.tex}
+\newpage
+\input{R5.tex}
+\newpage
+
+% *************** Bibliografia ***************
+\begin{thebibliography}{9}
+
+\bibitem{gitpro}
+Scott Chacon, Ben Straub. \textit{Pro Git}. Apress, 2014. Dostępne online: \url{https://git-scm.com/book/en/v2}
+
+\bibitem{dotnetdocs}
+Dokumentacja Microsoft .NET. Microsoft, dostęp online: \url{https://docs.microsoft.com/en-us/dotnet/}
+
+\bibitem{csharpstudy}
+Albahari, Joseph, Albahari, Ben. \textit{C\# 7.0 in a Nutshell: The Definitive Reference}. O'Reilly Media, 2017.
+
+\end{thebibliography}
+\newpage
+
+% *************** Zakończenie ***************
+\input{back.tex}
+
+\end{document}
+% *************** Koniec pliku szablon.tex ***************
